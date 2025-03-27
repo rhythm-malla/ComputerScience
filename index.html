@@ -64,6 +64,7 @@
             background-color: #030303;
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
 
         }
         .navbar h2 {
@@ -120,7 +121,14 @@
             <li><button onclick="location.href='#chapter55'">Chapter 5</button></li>
             <li><button onclick="location.href='#chapter66'">Chapter 6</button></li>
             <li><button onclick="location.href='#chapter77'">Chapter 7</button></li>
-            <li><button onclick="location.href='#chapter88'">Chapter 8</button></li>        
+            <li><button onclick="location.href='#chapter88'">Chapter 8</button></li>      
+            <h2>C programs</h2> 
+            <li><button onclick="location.href='#p1'">Prime Number Check</button></li>
+            <li><button onclick="location.href='#p2'">Factorial of a Number</button></li>
+            <li><button onclick="location.href='#p3'">Palindrome Check</button></li>
+            <li><button onclick="location.href='#p4'">Fibonacci Series</button></li>
+            <li><button onclick="location.href='#p5'">Perfect Number Check</button></li>
+            <h2> &nbsp; </h2> 
         </ul>
     </div>
     <div data-aos="fade-up" data-aos-delay="500" class="content"><div id="chapter1" class="scrollspy chapter"><blockquote class="title">
@@ -1991,7 +1999,138 @@ printf("</span>%s is not palindrome”,b);
         <strong>Explain intellectual property along with its types in detail. What legal provisions we have in Nepal to preserve intellectual property rights?</strong><br>
         Answer: Intellectual property refers to creations of the mind, such as inventions, literary and artistic works, designs, and symbols, 1 and it includes types such as copyright for creative works, patents for inventions, trademarks for brand names, and trade secrets for confidential business information; Nepal has legal provisions in place to preserve intellectual property rights, including the Copyright Act and the Patent, Design, and Trademark Act.  
 
-
+        <h1 id="p1">C Programs</h1>
+        <h2>1. Prime Number Check</h2>
+        <pre>
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int num, isPrime = 1;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+    
+        if (num &lt;= 1) {
+            isPrime = 0;
+        } else {
+            for (int i = 2; i * i &lt;= num; i++) {
+                if (num % i == 0) {
+                    isPrime = 0;
+                    break;
+                }
+            }
+        }
+    
+        if (isPrime) {
+            printf("%d is a prime number.\n", num);
+        } else {
+            printf("%d is not a prime number.", num);
+        }
+        printf("executed by Rhythm Malla");
+    
+        return 0;
+    }
+        </pre>
+        <h2>Output</h2>
+        <img src="1.png">
+    
+        <h2 id="p2">2. Factorial of a Number</h2>
+        <pre>
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int num, fact = 1;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+    
+        for (int i = 1; i &lt;= num; i++) {
+            fact *= i;
+        }
+    
+        printf("Factorial of %d is %d.", num, fact);
+        printf("executed by Rhythm Malla");
+        return 0;
+    }
+        </pre>
+        <h2>Output</h2>
+        <img src="2.png">
+        <h2 id="p3">3. Palindrome Check</h2>
+        <pre>
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int num, original, reversed = 0, remainder;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+    
+        original = num;
+        while (num != 0) {
+            remainder = num % 10;
+            reversed = reversed * 10 + remainder;
+            num /= 10;
+        }
+    
+        if (original == reversed) {
+            printf("%d is a palindrome.\\n", original);
+        } else {
+            printf("%d is not a palindrome.\\n", original);
+        }
+    
+        return 0;
+    }
+        </pre>
+        <h2>Output</h2>
+        <img src="3.png">
+        <h2 id="p4">4. Fibonacci Series</h2>
+        <pre>
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int n, a = 0, b = 1, next;
+        printf("Enter the number of terms: ");
+        scanf("%d", &n);
+    
+        printf("Fibonacci Series up to %d terms: \\n", n);
+        for (int i = 1; i &lt;= n; i++) {
+            printf("%d ", a);
+            next = a + b;
+            a = b;
+            b = next;
+        }
+    
+        printf("\\n");
+    
+        return 0;
+    }
+        </pre>
+    
+        <h2>Output</h2>
+        <img src="4.png">
+        <h2 id="p5">5. Perfect Number Check</h2>
+        <pre>
+    #include &lt;stdio.h&gt;
+    
+    int main() {
+        int num, sum = 0;
+        printf("Enter a number: ");
+        scanf("%d", &num);
+    
+        for (int i = 1; i &lt;= num / 2; i++) {
+            if (num % i == 0) {
+                sum += i;
+            }
+        }
+    
+        if (sum == num) {
+            printf("%d is a perfect number.\\n", num);
+        } else {
+            printf("%d is not a perfect number.\\n", num);
+        }
+    
+        return 0;
+    }
+        </pre>
+        <h2>Output</h2>
+        <img src="5.png">
 
     </div>
 </div>
